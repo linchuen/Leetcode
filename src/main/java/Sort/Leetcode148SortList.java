@@ -23,8 +23,6 @@ public class Leetcode148SortList {
 //        ListNode left = sortList(head);
 //        ListNode right = sortList(slow);
 //        return merge(left,right);
-//
-//
 //    }
 //    public ListNode merge(ListNode p1,ListNode p2)
 //    {
@@ -49,15 +47,12 @@ public class Leetcode148SortList {
 //        if(p1!=null)
 //        {
 //            curr.next=p1;
-//
 //        }
 //        if(p2!=null)
 //        {
 //            curr.next=p2;
-//
 //        }
 //        return l.next;
-//
 //    }
 
 
