@@ -8,21 +8,21 @@ package Easy;
 public class No35SearchInsertPosition {
 
     public static int searchInsert(int[] nums, int target) {
-        return binarySearch(nums, target, 0, nums.length - 1);
+        int result = binarySearch(nums, target, 0, nums.length - 1);
+        return result == -1 ? 0 : result;
     }
 
     public static int binarySearch(int[] nums, int target, int leftBound, int rightBound) {
+        if (leftBound >= rightBound) return target > nums[leftBound] ? leftBound + 1 : leftBound ;
 
         int mid = (leftBound + rightBound) / 2;
         if (target == nums[mid]) return mid;
 
         if (target < nums[mid]) {
-            if (mid - 1 <= 0) return 0;
             return binarySearch(nums, target, leftBound, mid - 1);
         }
 
         if (target > nums[mid]) {
-            if (mid + 1 > nums.length - 1) return nums.length;
             return binarySearch(nums, target, mid + 1, rightBound);
         }
         return -1;
@@ -33,5 +33,11 @@ public class No35SearchInsertPosition {
         System.out.println(searchInsert(nums, 5));
         System.out.println(searchInsert(nums, 7));
         System.out.println(searchInsert(nums, 2));
+        System.out.println(searchInsert(nums, 0));
+
+        int[] nums2 = {1, 3};
+        System.out.println(searchInsert(nums2, 0));
+        System.out.println(searchInsert(nums2, 2));
+        System.out.println(searchInsert(nums2, 4));
     }
 }
