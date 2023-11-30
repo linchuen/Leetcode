@@ -13,7 +13,7 @@ import java.util.Map;
  */
 public class No1TwoSum {
 
-    public int[] twoSum(int[] nums, int target) {
+    public static int[] twoSum(int[] nums, int target) {
         Map<Integer, Integer> numLocMap = new HashMap<>();
 
         for (int i = 0; i < nums.length; i++) {
@@ -30,11 +30,9 @@ public class No1TwoSum {
     }
 
     public static void main(String[] args) {
-        No1TwoSum no1TwoSum = new No1TwoSum();
-
         int[] nums = {3, 2, 4};
         int target = 6;
-        int[] result = no1TwoSum.twoSum(nums, target);
+        int[] result = twoSum(nums, target);
         assert Arrays.equals(result, new int[]{1, 2});
     }
 }

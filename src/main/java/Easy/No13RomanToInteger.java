@@ -23,7 +23,7 @@ import java.util.Map;
  * Given a roman numeral, convert it to an integer.
  */
 public class No13RomanToInteger {
-    public int romanToInt(String s) {
+    public static int romanToInt(String s) {
         if (s.isBlank()) return 0;
 
         Map<Character, Integer> romanMap = Map.of(
@@ -74,8 +74,7 @@ public class No13RomanToInteger {
     }
 
     public static void main(String[] args) {
-        No13RomanToInteger no13RomanToInteger = new No13RomanToInteger();
-        int result = no13RomanToInteger.romanToInt("MCMXCIV");
+        int result = romanToInt("MCMXCIV");
         assert result == 1994;
     }
 }

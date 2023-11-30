@@ -12,7 +12,7 @@ import java.util.Stack;
  * Every close bracket has a corresponding open bracket of the same type.
  */
 public class No20ValidParentheses {
-    public boolean isValid(String s) {
+    public static boolean isValid(String s) {
         Stack<Character> stack = new Stack<>();
         for (char c : s.toCharArray()) {
             if (isOpenBracket(c)) {
@@ -26,14 +26,14 @@ public class No20ValidParentheses {
         return stack.isEmpty();
     }
 
-    private boolean isOpenBracket(char c) {
+    private static boolean isOpenBracket(char c) {
         return switch (c) {
             case '(', '{', '[' -> true;
             default -> false;
         };
     }
 
-    private boolean isMatch(char c, char compareChar) {
+    private static boolean isMatch(char c, char compareChar) {
         return switch (c) {
             case ')':
                 yield compareChar == '(';
@@ -47,7 +47,6 @@ public class No20ValidParentheses {
     }
 
     public static void main(String[] args) {
-        No20ValidParentheses no20ValidParentheses = new No20ValidParentheses();
-       assert  no20ValidParentheses.isValid("()[]{}");
+       assert  isValid("()[]{}");
     }
 }
