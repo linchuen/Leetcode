@@ -13,7 +13,7 @@ public class No35SearchInsertPosition {
     }
 
     public static int binarySearch(int[] nums, int target, int leftBound, int rightBound) {
-        if (leftBound >= rightBound) return target > nums[leftBound] ? leftBound + 1 : leftBound ;
+        if (leftBound >= rightBound) return target > nums[leftBound] ? leftBound + 1 : leftBound;
 
         int mid = (leftBound + rightBound) / 2;
         if (target == nums[mid]) return mid;
@@ -30,14 +30,15 @@ public class No35SearchInsertPosition {
 
     public static void main(String[] args) {
         int[] nums = {1, 3, 5, 6};
-        System.out.println(searchInsert(nums, 5));
-        System.out.println(searchInsert(nums, 7));
-        System.out.println(searchInsert(nums, 2));
-        System.out.println(searchInsert(nums, 0));
+        assert searchInsert(nums, 0) == 0;
+        assert searchInsert(nums, 2) == 1;
+        assert searchInsert(nums, 5) == 2;
+        assert searchInsert(nums, 7) == 4;
+
 
         int[] nums2 = {1, 3};
-        System.out.println(searchInsert(nums2, 0));
-        System.out.println(searchInsert(nums2, 2));
-        System.out.println(searchInsert(nums2, 4));
+        assert searchInsert(nums2, 0) == 0;
+        assert searchInsert(nums2, 2) == 1;
+        assert searchInsert(nums2, 4) == 2;
     }
 }
