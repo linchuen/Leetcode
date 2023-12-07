@@ -3,17 +3,19 @@ package Medium;
 public class No5LongestPalindromicSubstring {
 
     public static String longestPalindrome(String s) {
-        int maxPalindrome = 0;
+        int maxLength = 0;
         String longestPalindrome = String.valueOf(s.charAt(0));
         char[] chars = s.toCharArray();
         for (int left = 0; left < s.length(); left++) {
             for (int right = s.length() - 1; right > left; right--) {
+                int length = right - left + 1;
+                if (maxLength > length) break;
+
                 boolean isPalindrome = isPalindromeString(chars, left, right);
                 if (!isPalindrome) continue;
 
-                int length = right - left + 1;
-                if (length > maxPalindrome) {
-                    maxPalindrome = length;
+                if (length > maxLength) {
+                    maxLength = length;
                     longestPalindrome = s.substring(left, right + 1);
                 }
                 break;
