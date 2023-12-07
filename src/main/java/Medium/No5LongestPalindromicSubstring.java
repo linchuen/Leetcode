@@ -6,15 +6,15 @@ public class No5LongestPalindromicSubstring {
         int maxPalindrome = 0;
         String longestPalindrome = String.valueOf(s.charAt(0));
         char[] chars = s.toCharArray();
-        for (int i = 0; i < s.length(); i++) {
-            for (int j = s.length() - 1; j > i; j--) {
-                boolean isPalindrome = isPalindromeString(chars, i, j);
+        for (int left = 0; left < s.length(); left++) {
+            for (int right = s.length() - 1; right > left; right--) {
+                boolean isPalindrome = isPalindromeString(chars, left, right);
                 if (!isPalindrome) continue;
 
-                int length = j - i + 1;
+                int length = right - left + 1;
                 if (length > maxPalindrome) {
                     maxPalindrome = length;
-                    longestPalindrome = s.substring(i, j + 1);
+                    longestPalindrome = s.substring(left, right + 1);
                 }
                 break;
             }
@@ -26,12 +26,12 @@ public class No5LongestPalindromicSubstring {
         while (start < end) {
             char startChar = chars[start];
             char endChar = chars[end];
-            if (startChar == endChar) {
-                start++;
-                end--;
-            } else {
+            if (startChar != endChar) {
                 return false;
             }
+
+            start++;
+            end--;
         }
         return true;
     }
