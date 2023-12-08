@@ -1,5 +1,8 @@
 package Medium;
 
+/**
+ * Given a string s, return the longest palindromic substring in s.
+ */
 public class No5LongestPalindromicSubstring {
 
     public static String longestPalindrome(String s) {
